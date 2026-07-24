@@ -298,6 +298,39 @@
   border-right-width: 1px;
   border-right-color: color-mix(in srgb, currentColor 30%, transparent);
 }
+/* ── Liquid Wave Effect ─────────────────────────────────────── */
+
+.ease-btn-liquid {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: transparent;
+  color: var(--ease-color-primary, #6c63ff);
+  border-color: var(--ease-color-primary, #6c63ff);
+}
+
+.ease-btn-liquid::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-color: var(--ease-color-primary, #6c63ff);
+  border-radius: 40%;
+  z-index: -1;
+  transition: transform var(--ease-speed-slow, 500ms) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ease-btn-liquid:hover {
+    color: #ffffff;
+  }
+  .ease-btn-liquid:hover::after {
+    transform: translateY(-80%) rotate(180deg);
+  }
+}
+
 /* ── Accessibility: Reduced Motion ───────────────────────── */
 
 @media (max-width: 480px) {
