@@ -1,25 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS-Only Tooltip Showcase</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure CSS Tooltips Demo</title>
+  <link rel="stylesheet" href="../../../easemotion.css">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+      gap: 3rem;
+    }
+    
+    .demo-btn {
+      padding: 0.75rem 1.5rem;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-size: 1rem;
+    }
+
+    .demo-btn:hover {
+      background-color: #2563eb;
+    }
+
+    .row {
+      display: flex;
+      gap: 2rem;
+    }
+  </style>
 </head>
 <body>
 
-    <main class="showcase-container">
-        <header class="showcase-header">
-            <h2>CSS-Only Tooltips</h2>
-            <p>Hover over the buttons below to test the smooth, JavaScript-free tooltip transitions.</p>
-        </header>
+  <h2 style="color: #0f172a; text-align: center; margin-bottom: 2rem;">Pure CSS Animated Tooltips</h2>
 
-        <div class="interactive-zone">
-            <button class="ease-tooltip" data-tip="This is a tooltip">Hover me (Top)</button>
+  <div class="row">
+    <!-- Top Tooltip (Default) -->
+    <button class="demo-btn ease-tooltip ease-tooltip-top" data-tooltip="Saves your current progress">
+      Hover Me (Top)
+    </button>
+  </div>
 
-            <button class="ease-tooltip ease-tooltip-bottom" data-tip="Below tooltip">Hover me (Bottom)</button>
-        </div>
-    </main>
+  <div class="row">
+    <!-- Left Tooltip -->
+    <button class="demo-btn ease-tooltip ease-tooltip-left" data-tooltip="Navigates to the previous page">
+      Hover Me (Left)
+    </button>
+    
+    <!-- Right Tooltip -->
+    <button class="demo-btn ease-tooltip ease-tooltip-right" data-tooltip="Proceeds to checkout">
+      Hover Me (Right)
+    </button>
+  </div>
+
+  <div class="row">
+    <!-- Bottom Tooltip -->
+    <button class="demo-btn ease-tooltip ease-tooltip-bottom" data-tooltip="This action cannot be undone!">
+      Hover Me (Bottom)
+    </button>
+  </div>
 
 </body>
 </html>
